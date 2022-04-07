@@ -12,6 +12,7 @@ pictures_storage = {}
 
 
 def get_path() -> str:
+    """ Having path in user and return it """
     while True:
         path_to = input(Fore.CYAN + '\tpath to folder: ')
         if os.path.exists(path_to):
@@ -20,7 +21,8 @@ def get_path() -> str:
             print(Fore.RED + '\n\tInvalid path, try again\n\texample -> /Users/User/Desktop/somefolder\n')
 
 
-def broot_dirs(path: str):
+def broot_dirs(path: str) -> None:
+    """ Broot dirs and if have files, adding to storages"""
     for root, dirs, files in os.walk(path):
         for file in files:
             if file.endswith(Format.audio_format):
@@ -31,7 +33,8 @@ def broot_dirs(path: str):
                 pictures_storage[file] = os.path.join(root, file)
 
 
-def print_res():
+def print_res() -> None:
+    """ Print some results if found media files """
     print('')
     if len(audio_storage) > 0:
         print(Fore.YELLOW + f'\tFound {len(audio_storage)} audio files!')
@@ -42,7 +45,8 @@ def print_res():
     print('')
 
 
-def extract():
+def extract() -> None:
+    """ If founding media files, creating folers and extract files to folder """
     confirm = input(Fore.YELLOW + '\tDo you wanna extract him? : Y/n : ')
     print('')
     if confirm not in ['yes', 'Yes', 'YES', 'y', 'Y']:
@@ -81,7 +85,7 @@ def extract():
     print('')
 
 
-def main():
+def main() -> None:
     Config.get_logo()
     path = get_path()
     broot_dirs(path=path)
