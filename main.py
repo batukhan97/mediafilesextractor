@@ -46,7 +46,7 @@ def print_res() -> None:
 
 
 def extract() -> None:
-    """ If founding media files, creating folers and extract files to folder """
+    """ If founding media files, creating folders and extract files to folder """
     confirm = input(Fore.YELLOW + '\tDo you wanna extract him? : Y/n : ')
     print('')
     if confirm not in ['yes', 'Yes', 'YES', 'y', 'Y']:
