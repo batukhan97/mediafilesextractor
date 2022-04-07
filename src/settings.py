@@ -15,5 +15,5 @@ class Config:
     """
 
     @staticmethod
-    def get_logo():
+    def get_logo() -> None:
         print(Config.logo)
