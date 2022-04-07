@@ -50,7 +50,7 @@ def extract() -> None:
     confirm = input(Fore.YELLOW + '\tDo you wanna extract him? : Y/n : ')
     print('')
     if confirm not in ['yes', 'Yes', 'YES', 'y', 'Y']:
-        print(Fore.GREEN + '\n\texit...')
+        print(Fore.GREEN + '\n\texit...\n')
         sys.exit()
 
     # this block work with audio storage
