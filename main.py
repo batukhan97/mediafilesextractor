@@ -59,8 +59,8 @@ def extract() -> None:
         if not os.path.exists(folder_name):
             os.mkdir(folder_name)
             for file, path in audio_storage.items():
-                copy_to = os.path.join(os.getcwd(), folder_name, file)
-                shutil.copy2(path, copy_to)
+                target_path = os.path.join(os.getcwd(), folder_name, file)
+                shutil.copy2(path, target_path)
         print(Fore.GREEN + '\tAudio files extract success!')
 
     # this block work with video storage
@@ -69,8 +69,8 @@ def extract() -> None:
         if not os.path.exists(folder_name):
             os.mkdir(folder_name)
             for file, path in video_storage.items():
-                copy_to = os.path.join(os.getcwd(), folder_name, file)
-                shutil.copy2(path, copy_to)
+                target_path = os.path.join(os.getcwd(), folder_name, file)
+                shutil.copy2(path, target_path)
         print(Fore.GREEN + '\tVideo files extract success!')
 
     # this block work with picture storage
@@ -79,8 +79,8 @@ def extract() -> None:
         if not os.path.exists(folder_name):
             os.mkdir(folder_name)
             for file, path in pictures_storage.items():
-                copy_to = os.path.join(os.getcwd(), folder_name, file)
-                shutil.copy2(path, copy_to)
+                target_path = os.path.join(os.getcwd(), folder_name, file)
+                shutil.copy2(path, target_path)
         print(Fore.GREEN + f'\tPictures files extract success!')
     print('')
 
