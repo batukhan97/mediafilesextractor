@@ -36,6 +36,10 @@ def broot_dirs(path: str) -> None:
 def print_res() -> None:
     """ Print some results if found media files """
     print('')
+    if len(audio_storage) < 1 and len(video_storage) < 1 and len(pictures_storage) < 1:
+        print(Fore.YELLOW + '\tNot found media files!')
+        print(Fore.GREEN + '\texit...\n')
+        sys.exit()
     if len(audio_storage) > 0:
         print(Fore.YELLOW + f'\tFound {len(audio_storage)} audio files!')
     if len(video_storage) > 0:
