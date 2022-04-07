@@ -1,8 +1,4 @@
 class Format:
-    def __init__(self):
-        self.audio_formats = ()
-        self.video_formats = ()
-        self.pictures_formats = ()
-
-
-format_instance = Format()
+    audio_format = ('mp3',)
+    video_format = ('mp4',)
+    pictures_format = ('jpg', 'jpeg', 'png', 'webp')
