@@ -33,7 +33,7 @@ def broot_dirs(path: str) -> None:
                 pictures_storage[file] = os.path.join(root, file)
 
 
-def print_res() -> None:
+def check_storage() -> None:
     """ Print some results if found media files """
     print('')
     if len(audio_storage) < 1 and len(video_storage) < 1 and len(pictures_storage) < 1:
@@ -93,7 +93,7 @@ def main() -> None:
     Config.get_logo()
     path_from_user = get_path()
     broot_dirs(path_from_user)
-    print_res()
+    check_storage()
     extract()
 
 
