@@ -89,13 +89,9 @@ def extract() -> None:
     print('')
 
 
-def main() -> None:
+if __name__ == '__main__':
     Config.get_logo()
     path_from_user = get_path()
     broot_dirs(path_from_user)
     check_storage()
     extract()
-
-
-if __name__ == '__main__':
-    main()
