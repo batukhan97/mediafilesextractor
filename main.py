@@ -87,8 +87,8 @@ def extract() -> None:
 
 def main() -> None:
     Config.get_logo()
-    path = get_path()
-    broot_dirs(path=path)
+    path_from_user = get_path()
+    broot_dirs(path_from_user)
     print_res()
     extract()
 
