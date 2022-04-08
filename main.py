@@ -5,6 +5,7 @@ from src.settings import Config
 
 def main():
     Config.get_logo()
+    Config.get_description()
 
     """ Get path from user """
     path_to = Base.get_path()
@@ -21,11 +22,6 @@ def main():
     audio_instance.add_storage(path_to, format.audio_format)
     video_instance.add_storage(path_to, format.video_format)
     pictures_instance.add_storage(path_to, format.pictures_format)
-
-    """ Check path storage, if len storage > 0, print, founding N files """
-    audio_instance.check_storage()
-    video_instance.check_storage()
-    pictures_instance.check_storage()
 
     """ Extracting media files, each instance is responsible for its own format """
     audio_instance.extract_files()
