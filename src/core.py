@@ -18,7 +18,7 @@ class Base:
                 return path
             else:
                 print(Fore.RED + f'\n\tinvalid path, try again'
-                                 f'\n\texample -> /Users/zhandos256/Desktop/Takeout\n')
+                                 f'\n\texample -> /Users/User/Desktop/Somefolder\n')
 
     def add_storage(self, path, format: Union[str, tuple]) -> None:
         for root, dirs, files in os.walk(path):
