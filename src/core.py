@@ -1,5 +1,6 @@
 import os
 import shutil
+from typing import Union
 from colorama import Fore
 
 
@@ -19,7 +20,7 @@ class Base:
                 print(Fore.RED + f'\n\tinvalid path, try again'
                                  f'\n\texample -> /Users/zhandos256/Desktop/Takeout\n')
 
-    def add_storage(self, path, format: tuple) -> None:
+    def add_storage(self, path, format: Union[str, tuple]) -> None:
         for root, dirs, files in os.walk(path):
             for file in files:
                 if file.endswith(format):
@@ -28,8 +29,6 @@ class Base:
     def check_storage(self) -> None:
         if len(self.path_storage) > 0:
             print(Fore.YELLOW + f'\tFounding {len(self.path_storage)} {self.name} files!')
-        else:
-            pass
 
     def extract_files(self) -> None:
         if len(self.path_storage) > 0:
