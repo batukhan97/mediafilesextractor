@@ -11,3 +11,7 @@ class TestBase(unittest.TestCase):
 
     def test_add_storage(self):
         pass
+
+
+if __name__ == '__main__':
+    unittest.main()
