@@ -1,6 +1,8 @@
 import os
 import shutil
+import sys
 from typing import Union
+
 from colorama import Fore
 
 
@@ -12,13 +14,17 @@ class Base:
 
     @staticmethod
     def get_path() -> str:
-        while True:
-            path = input(Fore.CYAN + '\tpath to folder: ')
-            if os.path.exists(path):
-                return path
-            else:
-                print(Fore.RED + f'\n\tinvalid path, try again'
-                                 f'\n\texample -> /Users/User/Desktop/Somefolder\n')
+        try:
+            while True:
+                path = input(Fore.CYAN + '\tPATH TO FOLDER: ')
+                if os.path.exists(path):
+                    return path
+                else:
+                    print(Fore.RED + f'\n\tpath does not exists, try again'
+                                     f'\n\texample -> /Users/User/Desktop/Somefolder\n')
+        except KeyboardInterrupt:
+            print(Fore.WHITE + '\n\n\texit...\n')
+            sys.exit()
 
     def add_storage(self, path, format: Union[str, tuple]) -> None:
         for root, dirs, files in os.walk(path):
@@ -26,17 +32,18 @@ class Base:
                 if file.endswith(format):
                     self.path_storage[file] = os.path.join(root, file)
 
-    def check_storage(self) -> None:
-        if len(self.path_storage) > 0:
-            print(Fore.YELLOW + f'\tFounding {len(self.path_storage)} {self.name} files!')
-
     def extract_files(self) -> None:
         if len(self.path_storage) > 0:
             if not os.path.exists(self.folder_name):
+                print(Fore.YELLOW + f'\tFounding {len(self.path_storage)} {self.name} files!')
                 os.mkdir(self.folder_name)
                 for file, path in self.path_storage.items():
                     target_path = os.path.join(os.getcwd(), self.folder_name, file)
                     shutil.copy2(path, target_path)
-                print(Fore.GREEN + f'\t{self.name} copying success!')
+                print(Fore.LIGHTGREEN_EX + f'\t{self.name} files copying success -> '
+                                           f'{os.path.join(os.getcwd(), self.folder_name)}')
+            else:
+                print(Fore.LIGHTRED_EX + f'\t{self.folder_name} already exists!!!')
+                sys.exit()
         else:
             print(Fore.YELLOW + f'\t{self.name} files not found!')
