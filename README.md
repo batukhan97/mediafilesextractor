@@ -18,4 +18,4 @@ If you have a folder with media files, but you don't want to extract from
    run main.py
    ```
 
-> Note `if scipt don't find your formats, just edit formats.py and add to code your format.`
+> Note `if scipt don't find your formats, just add you formats to code`
