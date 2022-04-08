@@ -6,7 +6,7 @@ from src.formats import Format
 class TestBase(unittest.TestCase):
     def setUp(self) -> None:
         self.base = Base
-        self.storage = []
+        self.storage = {}
         self.format = Format
 
     def test_add_storage(self):
