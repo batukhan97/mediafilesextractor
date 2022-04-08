@@ -16,6 +16,7 @@ class Base:
         try:
             while True:
                 path = input(Fore.CYAN + '\tPATH TO FOLDER: ')
+                print('')
                 if os.path.exists(path):
                     return path
                 else:
