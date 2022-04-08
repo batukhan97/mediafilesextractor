@@ -22,7 +22,7 @@ def main():
     video_instance.add_storage(path_to, format.video_format)
     pictures_instance.add_storage(path_to, format.pictures_format)
 
-    """ Check media files if found printing him """
+    """ Check path storage, if len storage > 0, print, founding N files """
     audio_instance.check_storage()
     video_instance.check_storage()
     pictures_instance.check_storage()
