@@ -1,4 +1,4 @@
-from src.core import Base
+from src.base import Base
 from src.formats import Format
 from src.settings import Config
 
