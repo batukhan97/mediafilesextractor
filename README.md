@@ -1,13 +1,21 @@
 # Media Data Extractor
 
-Script help you extract your media files from folder
+If you have a folder with media files, but you don't want to extract from
+    there manually, this script will help you extract all media data
+    automatically. It searches for all the formats you need recursively,
+    creates a folder for each format separately, and copies them there.
 
 
 ## Installation
 
-1) git clone https://github.com/zhandos256/mediadataextractor.git
-2) cd mediadataextractor
-3) pip install -r requirements.txt
-4) run main.py
+1) ```
+   git clone https://github.com/zhandos256/mediafilesextractor.git
+   ```
+2) ```
+   pip install -r requirements.txt
+   ``` 
+3) ```
+   run main.py
+   ```
 
-        If you file formats not in script, edit src/format.py and add your format to code
+> Note `if scipt don't find your formats, just edit formats.py and add to code your format.`
