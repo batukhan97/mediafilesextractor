@@ -1,7 +1,6 @@
 import os
 import shutil
 import sys
-from colorama import Fore
 
 
 class Base:
@@ -14,15 +13,15 @@ class Base:
     def get_path() -> str:
         try:
             while True:
-                path = input(Fore.CYAN + '\tPATH TO FOLDER: ')
+                path = input('\tPATH TO FOLDER: ')
                 print('')
                 if os.path.exists(path):
                     return path
                 else:
-                    print(Fore.RED + f'\n\tpath does not exists, try again'
-                                     f'\n\texample -> /Users/User/Desktop/Somefolder\n')
+                    print(f'\n\tpath does not exists, try again'
+                          f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
-            print(Fore.WHITE + '\n\n\texit...\n')
+            print(F'\n\n\texit...\n')
             sys.exit()
 
     def add_storage(self, path, format: tuple) -> None:
@@ -34,15 +33,14 @@ class Base:
     def extract_files(self) -> None:
         if len(self.path_storage) > 0:
             if not os.path.exists(self.folder_name):
-                print(Fore.YELLOW + f'\tFounding {len(self.path_storage)} {self.name} files!')
+                print(f'\tFounding {len(self.path_storage)} {self.name} files!')
                 os.mkdir(self.folder_name)
                 for file, path in self.path_storage.items():
                     target_path = os.path.join(os.getcwd(), self.folder_name, file)
                     shutil.copy2(path, target_path)
-                print(Fore.LIGHTGREEN_EX + f'\t{self.name} files copying success -> '
-                                           f'{os.path.join(os.getcwd(), self.folder_name)}')
+                print(f'\t{self.name} files copying success -> '
+                      f'{os.path.join(os.getcwd(), self.folder_name)}')
             else:
-                print(Fore.LIGHTRED_EX + f'\t{self.folder_name} already exists!!!')
-                sys.exit()
+                print(f'\t{self.folder_name} already exists!!!')
         else:
-            print(Fore.YELLOW + f'\t{self.name} files not found!')
+            print(f'\t{self.name} files not found!')
