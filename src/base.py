@@ -1,7 +1,6 @@
 import os
 import shutil
 import sys
-from typing import Union
 from colorama import Fore
 
 
@@ -26,7 +25,7 @@ class Base:
             print(Fore.WHITE + '\n\n\texit...\n')
             sys.exit()
 
-    def add_storage(self, path, format: Union[str, tuple]) -> None:
+    def add_storage(self, path, format: tuple) -> None:
         for root, dirs, files in os.walk(path):
             for file in files:
                 if file.endswith(format):
