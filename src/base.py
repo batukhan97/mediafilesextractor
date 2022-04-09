@@ -4,12 +4,14 @@ import shutil
 
 
 class Base:
+    """ Script help you automatically extract your media files from folders """
     def __init__(self, name, folder_name):
         self.name = name
         self.folder_name = folder_name
         self.path_storage = {}
 
     @staticmethod
+    # get path from user and return it to next func
     def get_path() -> str:
         try:
             while True:
@@ -22,12 +24,14 @@ class Base:
         except KeyboardInterrupt:
             sys.exit()
 
+    # get path from previous func and format in user, broot dirs and append it if found
     def add_storage(self, path, format: tuple) -> None:
         for root, dirs, files in os.walk(path):
             for file in files:
                 if file.endswith(format):
                     self.path_storage[file] = os.path.join(root, file)
 
+    # if files found, starting extract from self.path_storage
     def extract_files(self) -> None:
         if len(self.path_storage) > 0:
             if not os.path.exists(self.folder_name):
