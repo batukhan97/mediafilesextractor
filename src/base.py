@@ -14,14 +14,12 @@ class Base:
         try:
             while True:
                 path = input('\tPATH TO FOLDER: ')
-                print('')
                 if os.path.exists(path):
                     return path
                 else:
                     print(f'\n\tpath does not exists, try again'
                           f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
-            print(F'\n\n\texit...\n')
             sys.exit()
 
     def add_storage(self, path, format: tuple) -> None:
