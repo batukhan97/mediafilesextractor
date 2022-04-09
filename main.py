@@ -14,9 +14,9 @@ def main():
     format = Format()
 
     """ Creating Base instances """
-    audio_instance = Base('Audio', 'audio_folder')
-    video_instance = Base('Video', 'video_folder')
-    pictures_instance = Base('Image', 'images_folder')
+    audio_instance = Base('Audios', 'audio_folder')
+    video_instance = Base('Videos', 'video_folder')
+    pictures_instance = Base('Pictures', 'images_folder')
 
     """ Adding media files if founding """
     audio_instance.add_storage(path_to, format.audio_format)
