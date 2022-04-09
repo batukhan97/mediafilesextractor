@@ -1,7 +1,7 @@
 # Media files extractor
 
 
-##Description
+## Description
 
 If you have a folder with media files, but you don't want to extract from
     there manually, this script will help you extract all media data
