@@ -1,10 +1,14 @@
 import os
 import sys
 import shutil
+import colorama
+
+colorama.init()
 
 
 class Base:
     """ Script help you automatically extract your media files from folders """
+
     def __init__(self, name, folder_name):
         self.name = name
         self.folder_name = folder_name
@@ -15,12 +19,12 @@ class Base:
     def get_path() -> str:
         try:
             while True:
-                path = input('\tPATH TO FOLDER: ')
+                path = input(colorama.Fore.CYAN + '\tPATH TO FOLDER: ')
                 if os.path.exists(path):
                     return path
                 else:
-                    print(f'\n\tpath does not exists, try again'
-                          f'\n\texample -> /Users/User/Desktop/Somefolder\n')
+                    print(colorama.Fore.RED + f'\n\tpath does not exists, try again'
+                                              f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
             sys.exit()
 
@@ -35,14 +39,14 @@ class Base:
     def extract_files(self) -> None:
         if len(self.path_storage) > 0:
             if not os.path.exists(self.folder_name):
-                print(f'\tFounding {len(self.path_storage)} {self.name} files!')
+                print(colorama.Fore.YELLOW + f'\tFounding {len(self.path_storage)} {self.name} files!')
                 os.mkdir(self.folder_name)
                 for file, path in self.path_storage.items():
                     target_path = os.path.join(os.getcwd(), self.folder_name, file)
                     shutil.copy2(path, target_path)
-                print(f'\t{self.name} files copying success -> '
-                      f'{os.path.join(os.getcwd(), self.folder_name)}')
+                print(colorama.Fore.GREEN + f'\t{self.name} files copying success -> '
+                                            f'{os.path.join(os.getcwd(), self.folder_name)}')
             else:
-                print(f'\t{self.folder_name} already exists!!!')
+                print(colorama.Fore.RED + f'\t{self.folder_name} already exists!!!')
         else:
-            print(f'\t{self.name} files not found!')
+            print(colorama.Fore.YELLOW + f'\t{self.name} files not found!')
