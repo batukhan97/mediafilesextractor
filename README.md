@@ -23,5 +23,8 @@ Script have next formats
    git clone https://github.com/zhandos256/mediafilesextractor.git
    ```
 2) ```
+   pip install -r requirements.txt
+   ```
+2) ```
    run main.py
    ```
