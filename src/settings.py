@@ -28,3 +28,7 @@ class Config:
     @staticmethod
     def get_description() -> None:
         print(Config.description)
+
+    @staticmethod
+    def get_version():
+        print('\t\t\t\t\t\t\t\t\t', Config.version)
