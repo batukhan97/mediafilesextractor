@@ -8,7 +8,6 @@ colorama.init()
 
 class Base:
     """ Script help you automatically extract your media files from folders """
-
     def __init__(self, name, folder_name):
         self.name = name
         self.folder_name = folder_name
@@ -24,7 +23,7 @@ class Base:
                     return path
                 else:
                     print(colorama.Fore.RED + f'\n\tpath does not exists, try again'
-                                              f'\n\texample -> /Users/User/Desktop/Somefolder\n')
+                          f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
             sys.exit()
 
@@ -45,7 +44,7 @@ class Base:
                     target_path = os.path.join(os.getcwd(), self.folder_name, file)
                     shutil.copy2(path, target_path)
                 print(colorama.Fore.GREEN + f'\t{self.name} files copying success -> '
-                                            f'{os.path.join(os.getcwd(), self.folder_name)}')
+                      f'{os.path.join(os.getcwd(), self.folder_name)}')
             else:
                 print(colorama.Fore.RED + f'\t{self.folder_name} already exists!!!')
         else:
