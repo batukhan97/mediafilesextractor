@@ -10,9 +10,9 @@ If you have a folder with media files, but you don't want to extract from
 
 Script have next formats
 
-* Audio (mp3, opus, flac, aac, wav, wma)
-* Video (mp4, webm, flv, vob, ogv, ogg, avi, wmv, m4p, m4v, 3gp)
-* Images (jpg, jpeg, png, webp, gif, svg, avif, apng)
+* Audio: wav, flac, mp3, ogg, m3u, acc, wma, midi, aif, m4a, m4a, mpa, pls
+* Video: mov, swf, mp4, mkv, flv, wmv, avi, 3gp, vob, aaf, mod, mpeg
+* Images: mbp, jpg, png, raw, psd, eps, gif, ico, ai, svg, tif, cdr
 
 > Note `if you don't see your needed format here, you can just add your format to formats.py`
 
