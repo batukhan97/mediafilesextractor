@@ -1,6 +1,6 @@
 import os
-import sys
-import shutil
+from sys import exit
+from shutil import copy2
 
 
 class Base:
@@ -22,7 +22,7 @@ class Base:
                     print(f'\n\tpath does not exists, try again'
                           f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
-            sys.exit()
+            exit()
 
     # get path from previous func and format in user, broot dirs and append it if found
     def add_storage(self, path, format: tuple) -> None:
@@ -39,7 +39,7 @@ class Base:
                 os.mkdir(self.folder_name)
                 for file, path in self.path_storage.items():
                     target_path = os.path.join(os.getcwd(), self.folder_name, file)
-                    shutil.copy2(path, target_path)
+                    copy2(path, target_path)
                 print(f'\t{self.name} files copying success -> '
                       f'{os.path.join(os.getcwd(), self.folder_name)}')
             else:
