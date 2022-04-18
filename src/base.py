@@ -23,6 +23,9 @@ class Base:
                           f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
             exit()
+        except PermissionError:
+            print('\tPermission denied!')
+            exit()
 
     # get path from previous func and format in user, broot dirs and append it if found
     def add_storage(self, path, format: tuple) -> None:
