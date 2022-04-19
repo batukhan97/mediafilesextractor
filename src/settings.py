@@ -1,5 +1,5 @@
 class Config:
-    logo: str = """
+    __logo: str = """
     ███╗░░░███╗███████╗██████╗░██╗░█████╗░  ███████╗██╗██╗░░░░░███████╗░██████╗
     ████╗░████║██╔════╝██╔══██╗██║██╔══██╗  ██╔════╝██║██║░░░░░██╔════╝██╔════╝
     ██╔████╔██║█████╗░░██║░░██║██║███████║  █████╗░░██║██║░░░░░█████╗░░╚█████╗░
@@ -14,7 +14,7 @@ class Config:
     ███████╗██╔╝╚██╗░░░██║░░░██║░░██║██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝██║░░██║
     ╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
     """
-    description = """
+    __description = """
     If you have a folder with media files, but you don't want to extract from
     there manually, this script will help you extract all media data
     automatically. It searches for all the formats you need recursively,
@@ -22,8 +22,8 @@ class Config:
 
     @staticmethod
     def get_logo() -> None:
-        print(Config.logo)
+        print(Config.__logo)
 
     @staticmethod
     def get_description() -> None:
-        print(Config.description)
+        print(Config.__description)
