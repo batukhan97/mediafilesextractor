@@ -42,7 +42,10 @@ class Base:
                 os.mkdir(self.folder_name)
                 for file, path in self.path_storage.items():
                     target_path = os.path.join(os.getcwd(), self.folder_name, file)
-                    copy2(path, target_path)
+                    try:
+                        copy2(path, target_path)
+                    except FileNotFoundError:
+                        continue
                 print(f'\t{self.name} files copying success -> '
                       f'{os.path.join(os.getcwd(), self.folder_name)}')
             else:
