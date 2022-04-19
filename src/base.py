@@ -46,6 +46,10 @@ class Base:
                         copy2(path, target_path)
                     except FileNotFoundError:
                         continue
+                    except PermissionError:
+                        continue
+                    except OSError:
+                        continue
                 print(f'\t{self.name} files copying success -> '
                       f'{os.path.join(os.getcwd(), self.folder_name)}')
             else:
