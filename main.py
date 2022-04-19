@@ -5,7 +5,6 @@ from src.settings import Config
 
 def main():
     Config.get_logo()
-    Config.get_version()
     Config.get_description()
 
     """ Get path from user """
