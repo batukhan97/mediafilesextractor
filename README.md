@@ -18,10 +18,10 @@ Script have next formats
 
 
 ## Installation
-
 1) ```
    git clone https://github.com/zhandos256/mediafilesextractor.git
    ```
 2) ```
    run main.py
    ```
+> Note `Python version 3.8.9 using in project`
