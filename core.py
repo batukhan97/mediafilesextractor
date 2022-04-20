@@ -4,6 +4,8 @@ from shutil import copy2
 
 
 class Base:
+    """ Script help you automatically extract your media files from folders """
+
     __logo: str = """
         ███╗░░░███╗███████╗██████╗░██╗░█████╗░  ███████╗██╗██╗░░░░░███████╗░██████╗
         ████╗░████║██╔════╝██╔══██╗██║██╔══██╗  ██╔════╝██║██║░░░░░██╔════╝██╔════╝
@@ -19,6 +21,7 @@ class Base:
         ███████╗██╔╝╚██╗░░░██║░░░██║░░██║██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝██║░░██║
         ╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
         """
+
     __description = """
         If you have a folder with media files, but you don't want to extract from
         there manually, this script will help you extract all media data
@@ -28,13 +31,14 @@ class Base:
     audio_format = (
     '.wav', '.flac', '.mp3', '.ogg', '.m3u', '.acc', '.wma', '.midi', '.aif', '.m4a', '.m4a', '.mpa',
     '.pls', '.shn', '.ape', '.wv', '.tta', '.spx')
+
     video_format = (
     '.mov', '.swf', '.mp4', '.mkv', '.flv', '.wmv', '.avi', '.3gp', '.vob', '.aaf', '.mod', '.mpeg',
     '.webm', '.f4v', '.swf')
+
     pictures_format = (
     '.mbp', '.jpg', '.png', '.raw', '.psd', '.eps', '.gif', '.ico', '.ai', '.svg', '.tif', '.cdr')
 
-    """ Script help you automatically extract your media files from folders """
     def __init__(self, name, folder_name):
         self.name = name
         self.folder_name = folder_name
