@@ -1,10 +1,9 @@
 from src.base import Base
-from src.settings import Config
 
 
 def main():
-    Config.get_logo()
-    Config.get_description()
+    Base.get_logo()
+    Base.get_description()
 
     """ Get path from user """
     path_to = Base.get_path()
