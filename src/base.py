@@ -4,6 +4,27 @@ from shutil import copy2
 
 
 class Base:
+    __logo: str = """
+        ███╗░░░███╗███████╗██████╗░██╗░█████╗░  ███████╗██╗██╗░░░░░███████╗░██████╗
+        ████╗░████║██╔════╝██╔══██╗██║██╔══██╗  ██╔════╝██║██║░░░░░██╔════╝██╔════╝
+        ██╔████╔██║█████╗░░██║░░██║██║███████║  █████╗░░██║██║░░░░░█████╗░░╚█████╗░
+        ██║╚██╔╝██║██╔══╝░░██║░░██║██║██╔══██║  ██╔══╝░░██║██║░░░░░██╔══╝░░░╚═══██╗
+        ██║░╚═╝░██║███████╗██████╔╝██║██║░░██║  ██║░░░░░██║███████╗███████╗██████╔╝
+        ╚═╝░░░░░╚═╝╚══════╝╚═════╝░╚═╝╚═╝░░╚═╝  ╚═╝░░░░░╚═╝╚══════╝╚══════╝╚═════╝░
+
+        ███████╗██╗░░██╗████████╗██████╗░░█████╗░░█████╗░████████╗░█████╗░██████╗░
+        ██╔════╝╚██╗██╔╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+        █████╗░░░╚███╔╝░░░░██║░░░██████╔╝███████║██║░░╚═╝░░░██║░░░██║░░██║██████╔╝
+        ██╔══╝░░░██╔██╗░░░░██║░░░██╔══██╗██╔══██║██║░░██╗░░░██║░░░██║░░██║██╔══██╗
+        ███████╗██╔╝╚██╗░░░██║░░░██║░░██║██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝██║░░██║
+        ╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
+        """
+    __description = """
+        If you have a folder with media files, but you don't want to extract from
+        there manually, this script will help you extract all media data
+        automatically. It searches for all the formats you need recursively,
+        creates a folder for each format separately, and copies them there\n"""
+
     audio_format = (
     '.wav', '.flac', '.mp3', '.ogg', '.m3u', '.acc', '.wma', '.midi', '.aif', '.m4a', '.m4a', '.mpa',
     '.pls', '.shn', '.ape', '.wv', '.tta', '.spx')
@@ -32,6 +53,14 @@ class Base:
                           f'\n\texample -> /Users/User/Desktop/Somefolder\n')
         except KeyboardInterrupt:
             exit()
+
+    @staticmethod
+    def get_logo():
+        print(Base.__logo)
+
+    @staticmethod
+    def get_description():
+        print(Base.__description)
 
     # get path from previous func and format in user, broot dirs and append it if found
     def add_storage(self, path, format: tuple) -> None:
