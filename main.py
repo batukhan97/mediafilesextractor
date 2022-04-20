@@ -1,4 +1,4 @@
-from src.base import Base
+from base import Base
 
 
 def main():
