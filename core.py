@@ -56,11 +56,13 @@ class Base:
         except KeyboardInterrupt:
             exit()
 
-    def get_logo(self):
-        print(self.__logo)
+    @staticmethod
+    def get_logo():
+        print(Base.__logo)
 
-    def get_description(self):
-        print(self.__description)
+    @staticmethod
+    def get_description():
+        print(Base.__description)
 
     def add_storage(self, path, format: tuple) -> None:
         for root, dirs, files in os.walk(path):
