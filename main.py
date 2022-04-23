@@ -2,8 +2,8 @@ from core import Base
 
 
 def main():
-    Base.get_logo()
-    Base.get_description()
+    print(Base.get_logo())
+    print(Base.get_description())
 
     """ Get path from user """
     path_to = Base.get_path()
